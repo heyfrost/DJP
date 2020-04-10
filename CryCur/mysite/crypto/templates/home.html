@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{%block content1 %}
+
+
+    <h1 >Hello...!!</h1>
+    {% for key,value in price.DISPLAY.items %}
+        <strong>Name </strong>{{ key }}<br/>
+        <strong>Price : </strong>{{ value.USD.PRICE }}<br/>
+        <strong>Daily High : </strong>{{ value.USD.HIGHDAY }}<br/>
+        <strong>Daily low : </strong>{{ value.USD.LOWDAY }}<br/>
+        <strong>Marketcap : </strong>{{ value.USD.MKTCAP }}<br/>
+    <hr><br/>
+    {% endfor %}
+
+
+
+    <div class="jumbotron">
+      <h1 class="display-4">Crypto News Network</h1>
+      <p class="lead">Your source for up to minute Crypto Currency and Blockchain News</p>
+      <hr class="my-4">
+      <p class="lead">
+        <a class="btn btn-secondary btn-sm" href="#" role="button">Learn more</a>
+      </p>
+    </div>
+    {% for x in api.Data %}
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="{{ x.imageurl }}" alt="{{ x.source}}">
+          <div class="card-body">
+            <h5 class="card-title">{{x.title}}</h5>
+            <p class="card-text">{{x.body}}</p>
+            <a href="{{x.url}}" class="btn btn-secondary ">Read More</a>
+          </div>
+        </div>
+    {% endfor %}
+
+
+
+
+{% endblock %}
