@@ -1,1 +1,3 @@
-frontend karna hai
+Tracks info about Crypto Currency
+
+frontend sahi karna hai
